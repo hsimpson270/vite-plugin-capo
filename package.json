@@ -1,0 +1,58 @@
+{
+  "name": "vite-plugin-capo",
+  "version": "1.0.0",
+  "description": "A Vite plugin to reorder <head> elements based on capo.js best practices.",
+  "author": {
+    "email": "contact@hunter-simpson.dev",
+    "name": "Hunter Simpson",
+    "url": "https://hunter-simpson.dev"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/hsimpson270/vite-plugin-capo",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hsimpson270/vite-plugin-capo"
+  },
+  "bugs": {
+    "url": "https://github.com/hsimpson270/vite-plugin-capo/issues"
+  },
+  "type": "module",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -b && vite build",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "parse5": "^7.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "24.0.10",
+    "prettier": "3.6.2",
+    "prettier-plugin-organize-imports": "4.1.0",
+    "typescript": "5.8.3",
+    "vite": "7.0.0",
+    "vite-plugin-dts": "4.5.4",
+    "vite-tsconfig-paths": "5.1.4"
+  },
+  "peerDependencies": {
+    "vite": "^6.0.0 || ^7.0.0"
+  },
+  "keywords": [
+    "capo",
+    "capo.js",
+    "head",
+    "html",
+    "plugin",
+    "reorder",
+    "sort",
+    "typescript",
+    "vite",
+    "vite-plugin"
+  ]
+}
