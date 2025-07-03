@@ -1,7 +1,7 @@
 # vite-plugin-capo
 
 ![npm](https://img.shields.io/npm/v/vite-plugin-capo?color=brightgreen)
-![downloads](https://img.shields.io/npm/dw/vite-plugin-capo?color=blue)
+![downloads](https://img.shields.io/npm/dm/vite-plugin-capo?color=blue)
 ![license](https://img.shields.io/npm/l/vite-plugin-capo?color=lightgrey)
 ![bundle size](https://img.shields.io/bundlephobia/minzip/vite-plugin-capo?color=blueviolet&label=bundle%20size)
 
