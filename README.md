@@ -45,7 +45,7 @@ To test the plugin, run `vite build` after including it in your `vite.config.ts`
 
 To take it a step further, it is recommended to install the [capo.js extension](https://rviscomi.github.io/capo.js/user/extension/).
 
-## 🧠 How It Works
+## How It Works
 
 This plugin sorts `<head>` tags into the following order:
 
@@ -61,7 +61,7 @@ This plugin sorts `<head>` tags into the following order:
 10. Prefetch and Prerender Hints (`<link rel="prefetch">`, `<link rel="dns-prefetch">`, and `<link rel="prerender">`)
 11. All other elements
 
-## 💡 Example
+## Example
 
 ### Before
 
@@ -98,6 +98,6 @@ This plugin sorts `<head>` tags into the following order:
 
 MIT
 
-## 🙏 Credits
+## Credits
 
 This plugin is inspired by [capo.js](https://rviscomi.github.io/capo.js/) by [Rick Viscomi](https://twitter.com/rick_viscomi).

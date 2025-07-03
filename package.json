@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-capo",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Vite plugin to reorder <head> elements based on capo.js best practices.",
   "author": {
     "email": "contact@hunter-simpson.dev",
@@ -11,7 +11,7 @@
   "homepage": "https://github.com/hsimpson270/vite-plugin-capo",
   "repository": {
     "type": "git",
-    "url": "https://github.com/hsimpson270/vite-plugin-capo"
+    "url": "git+https://github.com/hsimpson270/vite-plugin-capo.git"
   },
   "bugs": {
     "url": "https://github.com/hsimpson270/vite-plugin-capo/issues"
