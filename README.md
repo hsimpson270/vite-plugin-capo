@@ -1,24 +1,19 @@
 # vite-plugin-capo
 
-![npm](https://img.shields.io/npm/v/vite-plugin-capo?color=brightgreen)
-![downloads](https://img.shields.io/npm/dm/vite-plugin-capo?color=blue)
-![license](https://img.shields.io/npm/l/vite-plugin-capo?color=lightgrey)
-![bundle size](https://img.shields.io/bundlephobia/minzip/vite-plugin-capo?color=blueviolet&label=bundle%20size)
+![npm](https://img.shields.io/npm/v/vite-plugin-capo)
+![downloads](https://img.shields.io/npm/dm/vite-plugin-capo)
+![license](https://img.shields.io/npm/l/vite-plugin-capo)
 
-A Vite plugin to reorder your head tags at build time using [capo.js](https://rviscomi.github.io/capo.js/) rules — a performance-focused set of best practices for modern web apps.
+A lightweight Vite plugin to reorder your `<head>` at build time using [capo.js](https://rviscomi.github.io/capo.js/) rules.
 
-## Why?
-
-The order of elements in your HTML `<head>` affects how browsers load and render your page. Poor ordering can block rendering or delay critical resources.
+The order of elements in your `<head>` affects how browsers load and render your page. Poor ordering can block rendering or delay resources. Optimizing your `<head>` will increase the perceived performance of your site and can decrease the time of first render by up to 400ms for large, unoptimized pages.
 
 ## Features
 
 - Automatically reorders your HTML `<head>` tags at build time.
 - Optimizes `<head>` tag order for improved web performance using capo.js best practices.
 - Zero configuration required.
-- Built with TypeScript and strict ESM support.
-
-> **Note:** This plugin only runs during `vite build`. It does not affect local development with `vite dev`.
+- Written in TypeScript with native ESM support.
 
 ## Installation
 
@@ -43,7 +38,9 @@ export default defineConfig({
 
 To test the plugin, run `vite build` after including it in your `vite.config.ts` and then run `vite preview` to see your production-ready page. Your `<head>` should now be sorted following the capo.js rules.
 
-To take it a step further, it is recommended to install the [capo.js extension](https://rviscomi.github.io/capo.js/user/extension/).
+> **Note:** This plugin only runs during `vite build`. It does not affect local development when using `vite dev`.
+
+For further testing, it is recommended to install the [capo.js extension](https://rviscomi.github.io/capo.js/user/extension/) to validate your results.
 
 ## How It Works
 
@@ -91,8 +88,16 @@ This plugin sorts `<head>` tags into the following order:
 
 ## Compatibility
 
-- Requires Vite v4+
-- Supports Vite apps using HTML entry points (not SSR output)
+- Requires Vite v2+
+- Supports Vite apps using HTML entry points, such as React, Vue, Preact, or Svelte
+- Not compatible with SSR setups, as they bypass `index.html` generation
+- Not compatible with Astro — use [`astro-capo`](https://github.com/natemoo-re/astro-capo)
+
+## Why This Is a Vite-Only Plugin
+
+This plugin is Vite-specific because it uses the `transformIndexHtml` hook, which is part of Vite's extended plugin API.
+
+Unlike Rollup, Vite supports transforming HTML files during the build process. The `transformIndexHtml` hook is triggered when Vite processes `index.html`, allowing this plugin to reorder `<head>` tags based on performance best practices defined by capo.js.
 
 ## License
 
