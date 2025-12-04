@@ -3,7 +3,7 @@ import { parse, serialize } from 'parse5';
 import { isElement } from './isElement';
 import { sortHead } from './sortHead';
 
-export function reorderHead(html: string): string {
+const reorderHead = (html: string): string => {
   const document = parse(html);
 
   const htmlNode = document.childNodes.find((node) => {
@@ -20,4 +20,6 @@ export function reorderHead(html: string): string {
 
   headNode.childNodes = sortHead(headNode.childNodes);
   return serialize(document);
-}
+};
+
+export { reorderHead };

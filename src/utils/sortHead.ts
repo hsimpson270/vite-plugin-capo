@@ -1,14 +1,30 @@
-import { META_HTTP_EQUIV_KEYWORDS } from '@/constants/meta-http-equiv-keywords';
-import { Attributes } from '@/enums/attributes.enum';
-import { LinkRelKeywords } from '@/enums/link-rel-keywords.enum';
-import { Tags } from '@/enums/tags.enum';
+import type { Attribute } from '@/constants/attributes';
+import { Attributes } from '@/constants/attributes';
+import { LinkRelKeywords } from '@/constants/link-rel-keywords';
+import { Tags } from '@/constants/tags';
 import type { DefaultTreeAdapterTypes } from 'parse5';
-import { getAttribute } from './getAttribute';
 import { isElement } from './isElement';
 
-export function sortHead(
+const META_HTTP_EQUIV_KEYWORDS = [
+  'accept-ch',
+  'content-security-policy',
+  'content-type',
+  'default-style',
+  'delegate-ch',
+  'origin-trial',
+  'x-dns-prefetch-control',
+];
+
+const getAttribute = (
+  node: DefaultTreeAdapterTypes.Element,
+  name: Attribute,
+): string | undefined => {
+  return node.attrs.find((x) => x.name === name)?.value;
+};
+
+const sortHead = (
   nodes: DefaultTreeAdapterTypes.ChildNode[],
-): DefaultTreeAdapterTypes.ChildNode[] {
+): DefaultTreeAdapterTypes.ChildNode[] => {
   const pragmaDirectives: DefaultTreeAdapterTypes.ChildNode[] = [];
   const title: DefaultTreeAdapterTypes.ChildNode[] = [];
   const preconnectHints: DefaultTreeAdapterTypes.ChildNode[] = [];
@@ -132,4 +148,6 @@ export function sortHead(
     ...prefetchAndPrerenderHints,
     ...others,
   ];
-}
+};
+
+export { sortHead };

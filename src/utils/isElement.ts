@@ -1,7 +1,9 @@
 import type { DefaultTreeAdapterTypes } from 'parse5';
 
-export function isElement(
+const isElement = (
   node: DefaultTreeAdapterTypes.ChildNode,
-): node is DefaultTreeAdapterTypes.Element {
+): node is DefaultTreeAdapterTypes.Element => {
   return node.nodeName !== '#text' && 'tagName' in node;
-}
+};
+
+export { isElement };
